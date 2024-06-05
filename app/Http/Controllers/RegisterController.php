@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\RegisterRequest;
+use App\Http\Requests\RegisterRequest;
+use App\Models\User;
 
 
 class RegisterController extends Controller
