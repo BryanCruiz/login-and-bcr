@@ -19,6 +19,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
      * Home Routes
      */
     Route::get('/', 'HomeController@index')->name('home.index');
+    
+    Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
 
     Route::group(['middleware' => ['guest']], function() {
         /**
@@ -31,6 +33,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
          * Login Routes
          */
         Route::get('/login', 'LoginController@show')->name('login.show');
+        
+
         Route::post('/login', 'LoginController@login')->name('login.perform');
 
     });
@@ -39,6 +43,5 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         /**
          * Logout Routes
          */
-        Route::get('/logout', 'LogoutController@perform')->name('logout.perform');
     });
 });
